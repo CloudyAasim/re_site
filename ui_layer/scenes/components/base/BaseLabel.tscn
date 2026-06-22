@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dp0an73jysn85"]
+
+[ext_resource type="StyleBox" uid="uid://bv3aqnx5tvlwj" path="res://ui_layer/themes/base_white_focus_style_box_flat.tres" id="1_glvob"]
+[ext_resource type="StyleBox" uid="uid://d122tlq88sryc" path="res://ui_layer/themes/base_white_style_box_flat.tres" id="1_iqe07"]
+
+[sub_resource type="Theme" id="Theme_glvob"]
+Label/colors/font_color = Color(0.13725491, 0.13725491, 0.019607844, 1)
+Label/styles/focus = ExtResource("1_glvob")
+Label/styles/normal = ExtResource("1_iqe07")
+
+[node name="BaseLabel" type="Label" unique_id=512959548]
+theme = SubResource("Theme_glvob")

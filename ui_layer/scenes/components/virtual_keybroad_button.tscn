@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c6wvydkh5e1dd"]
+
+[ext_resource type="PackedScene" uid="uid://hkyumlf78gvf" path="res://ui_layer/scenes/components/base/BaseCheckButton.tscn" id="1_5gxpr"]
+[ext_resource type="Script" uid="uid://cj5uuir16w0ol" path="res://ui_layer/scripts/components/virtual_keyboard_button.gd" id="2_fxe1t"]
+
+[node name="VirtualKeybroadButton" unique_id=1563318303 instance=ExtResource("1_5gxpr")]
+script = ExtResource("2_fxe1t")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

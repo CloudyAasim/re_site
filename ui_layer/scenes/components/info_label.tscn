@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cmdbg2vtexlxy"]
+
+[ext_resource type="PackedScene" uid="uid://dp0an73jysn85" path="res://ui_layer/scenes/components/base/BaseLabel.tscn" id="1_mnfhe"]
+[ext_resource type="Script" uid="uid://dxg0x2ahq3bhx" path="res://ui_layer/scripts/components/info_label.gd" id="2_oxhhv"]
+
+[node name="InfoLabel" unique_id=512959548 instance=ExtResource("1_mnfhe")]
+custom_minimum_size = Vector2(210, 50)
+custom_maximum_size = Vector2(304, 180)
+offset_right = 210.0
+offset_bottom = 50.0
+theme_override_constants/line_spacing = -3
+theme_override_font_sizes/font_size = 8
+autowrap_mode = 3
+script = ExtResource("2_oxhhv")

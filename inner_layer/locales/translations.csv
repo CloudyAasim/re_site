@@ -1,0 +1,50 @@
+key,zh,en
+LINEEDIT_USERNAME,用户名,User Name
+LINEEDIT_PASSWD,密码,Password
+LINEEDIT_SERVER,请输入服务器地址,Please enter server address.
+LABEL_DATE,日期,Date
+LABEL_FLOOR,楼层,Floor
+LABEL_SLOT,时段,Time Slot
+LABEL_SEAT,座位,Seat
+LABEL_TIP,提示：可以在「设置」中开启虚拟键盘哦～,Tip: Enable keyboard in「Settings」
+BTN_HOME_SEAT,选择座位,Seat
+BTN_HOME_INFORMATION,信息,Information
+BTN_HOME_SETTING,设置,Settings
+BTN_HOME_SIGNOUT,退出登录,Sign Out
+BTN_HOME_QUIT,退出,Quit
+BTN_CLOSE,关闭,Close
+BTN_SIGN_IN,登录,Sign In
+BTN_RESERVE,预约,Reserve
+BTN_CANCEL,取消,Cancel
+BTN_CHECK_IN,签到,Check In
+BTN_SUSPEND,暂离,Suspend
+BTN_BACK,返回,Back
+BTN_FINISH,结束,Finish
+BTN_PREV,上一页,Prev
+BTN_NEXT,下一页,Next
+BTU_SERVER,确认更改,Confirm changes
+CHECK_BTN_VIRTUAL_KEYBROAD,虚拟键盘,Virtual Keybroad
+CHECK_BTN_CANVAS_MODE,画布模式,Canvas Mode
+STATUS_AVAILABLE,空闲,Available
+STATUS_OCCUPIED,占用,Occupied
+STATUS_SUSPENDED,暂离,Suspended
+MSG_NETWORK_ERROR,网络请求失败,Network Error
+MSG_LOAD_FAILED,加载失败,Load Failed
+LABEL_MY_RESERVATIONS,我的预约列表,My Reservations
+LABEL_USERNAME,用户名,Username
+LABEL_SCORE,积分,Score
+LABEL_SLOT,时段信息,Slots
+TAB_FILTER,筛选,Filter
+TAB_SEAT_MAP,座位图,Seat Map
+ERROR_LEADING,正在登录中...,Leading...
+ERROR_RESERVATION_FAILED,预约失败，请稍后重试,Reservation failed, please try again later
+ERROR_CHECK_IN_FAILED,签到/返回失败，请稍后重试,Check-in/Resume failed, please try again later
+ERROR_NOT_IN_CHECK_IN_TIME,可能不在签到时间范围内，无法签到,Might not be within check-in hours, cannot check in
+ERROR_DUPLICATE_RESERVATION,可能已有进行中的预约，无法重复预约,Might have an active reservation, cannot reserve again
+ERROR_NETWORK_OR_NOT_FOUND,请检查网络连接,Please check your network connection
+ERROR_SUSPEND_FAILED,暂离失败，请稍后重试,Suspend failed, please try again later
+ERROR_FINISH_FAILED,结束使用失败，请稍后重试,Finish failed, please try again later
+ERROR_CANCEL_FAILED,取消预约失败，请稍后重试,Cancel failed, please try again later
+ERROR_NO_RESERVATION_ID,未找到有效预约ID,No valid reservation ID found
+ERROR_LOGIN_FAILED,登录失败，请检查账号和密码是否正确,Login failed, please check your username and password
+ERROR_NETWORK_OR_NOT_FOUND,请检查网络连接,Please check your network connection

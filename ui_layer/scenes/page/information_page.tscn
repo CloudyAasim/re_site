@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://14u4y814jnkh"]
+
+[ext_resource type="Script" uid="uid://c64hhtdlqte18" path="res://ui_layer/scripts/page/information_page.gd" id="1_m2p3x"]
+[ext_resource type="PackedScene" uid="uid://dxf4iwup1htyf" path="res://ui_layer/scenes/components/back_home_page_button.tscn" id="2_m2p3x"]
+[ext_resource type="PackedScene" uid="uid://dp0an73jysn85" path="res://ui_layer/scenes/components/base/BaseLabel.tscn" id="3_1tltt"]
+[ext_resource type="PackedScene" uid="uid://bxy7tfgwmnfv4" path="res://ui_layer/scenes/components/base/BaseItemList.tscn" id="4_1tltt"]
+
+[node name="InformationPage" type="Node" unique_id=1840986631 node_paths=PackedStringArray("username_title_label", "score_title_label", "username_value_label", "score_value_label", "slot_title_label", "slots_item_list", "initial_focus_control")]
+script = ExtResource("1_m2p3x")
+username_title_label = NodePath("CanvasLayer/VBoxContainer/ProfileContainer/Info/UsernameTitleLabel")
+score_title_label = NodePath("CanvasLayer/VBoxContainer/ProfileContainer/Info/ScoreTitleLabel")
+username_value_label = NodePath("CanvasLayer/VBoxContainer/ProfileContainer/InfoValue/UsernameValueLabel")
+score_value_label = NodePath("CanvasLayer/VBoxContainer/ProfileContainer/InfoValue/ScoreValueLabel")
+slot_title_label = NodePath("CanvasLayer/VBoxContainer/SlotTitleLabel")
+slots_item_list = NodePath("CanvasLayer/VBoxContainer/SlotsItemList")
+initial_focus_control = NodePath("CanvasLayer/VBoxContainer/BackHomePageButton")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2090683707]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=471071749]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.5
+offset_top = -38.5
+offset_right = 20.5
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackHomePageButton" parent="CanvasLayer/VBoxContainer" unique_id=1890459965 instance=ExtResource("2_m2p3x")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ProfileContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer" unique_id=1599477240]
+layout_mode = 2
+alignment = 1
+
+[node name="Info" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/ProfileContainer" unique_id=1726235572]
+layout_mode = 2
+
+[node name="UsernameTitleLabel" parent="CanvasLayer/VBoxContainer/ProfileContainer/Info" unique_id=512959548 instance=ExtResource("3_1tltt")]
+layout_mode = 2
+
+[node name="ScoreTitleLabel" parent="CanvasLayer/VBoxContainer/ProfileContainer/Info" unique_id=1528453287 instance=ExtResource("3_1tltt")]
+layout_mode = 2
+
+[node name="InfoValue" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/ProfileContainer" unique_id=1098291599]
+layout_mode = 2
+
+[node name="UsernameValueLabel" parent="CanvasLayer/VBoxContainer/ProfileContainer/InfoValue" unique_id=1490830687 instance=ExtResource("3_1tltt")]
+layout_mode = 2
+
+[node name="ScoreValueLabel" parent="CanvasLayer/VBoxContainer/ProfileContainer/InfoValue" unique_id=819282796 instance=ExtResource("3_1tltt")]
+layout_mode = 2
+
+[node name="SlotTitleLabel" parent="CanvasLayer/VBoxContainer" unique_id=1890151480 instance=ExtResource("3_1tltt")]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="SlotsItemList" parent="CanvasLayer/VBoxContainer" unique_id=999221146 instance=ExtResource("4_1tltt")]
+layout_mode = 2
+size_flags_horizontal = 4
+auto_width = true
+auto_height = true

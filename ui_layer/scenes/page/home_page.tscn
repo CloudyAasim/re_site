@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://gln8v1rvru80"]
+
+[ext_resource type="Script" uid="uid://c1lmcawmt24g6" path="res://ui_layer/scripts/page/home_page.gd" id="1_ml11d"]
+[ext_resource type="PackedScene" uid="uid://bs4eee2s5m7of" path="res://ui_layer/scenes/components/base/BaseButton.tscn" id="2_4d8r3"]
+
+[node name="HomePage" type="Node" unique_id=1017030061 node_paths=PackedStringArray("seat_button", "information_button", "setting_button", "signout_button", "quit_button")]
+script = ExtResource("1_ml11d")
+seat_button = NodePath("CanvasLayer/MarginContainer/HFlowContainer/SeatButton")
+information_button = NodePath("CanvasLayer/MarginContainer/HFlowContainer/InformationButton")
+setting_button = NodePath("CanvasLayer/MarginContainer/HFlowContainer/SettingButton")
+signout_button = NodePath("CanvasLayer/MarginContainer/HFlowContainer/SignOutButton")
+quit_button = NodePath("CanvasLayer/MarginContainer/HFlowContainer/QuitButton")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=361062496]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1591879036]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HFlowContainer" type="HFlowContainer" parent="CanvasLayer/MarginContainer" unique_id=771757610]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="SeatButton" parent="CanvasLayer/MarginContainer/HFlowContainer" unique_id=1890459965 instance=ExtResource("2_4d8r3")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="InformationButton" parent="CanvasLayer/MarginContainer/HFlowContainer" unique_id=1524817508 instance=ExtResource("2_4d8r3")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SettingButton" parent="CanvasLayer/MarginContainer/HFlowContainer" unique_id=896646879 instance=ExtResource("2_4d8r3")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SignOutButton" parent="CanvasLayer/MarginContainer/HFlowContainer" unique_id=1549815874 instance=ExtResource("2_4d8r3")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="QuitButton" parent="CanvasLayer/MarginContainer/HFlowContainer" unique_id=186706317 instance=ExtResource("2_4d8r3")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="pressed" from="CanvasLayer/MarginContainer/HFlowContainer/SeatButton" to="." method="_on_seat_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/HFlowContainer/InformationButton" to="." method="_on_information_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/HFlowContainer/SettingButton" to="." method="_on_setting_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/HFlowContainer/SignOutButton" to="." method="_on_signout_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/HFlowContainer/QuitButton" to="." method="_on_quit_button_pressed"]

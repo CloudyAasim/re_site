@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b6o8hxnhdr0ej"]
+
+[ext_resource type="PackedScene" uid="uid://dg2xqjlleqad3" path="res://ui_layer/scenes/components/base/BaseOptionButton.tscn" id="1_rodb8"]
+[ext_resource type="Script" uid="uid://divohjelgy8ag" path="res://ui_layer/scripts/components/language_option_button.gd" id="2_5l2vs"]
+
+[node name="LanguageOptionButton" unique_id=1318360669 instance=ExtResource("1_rodb8")]
+script = ExtResource("2_5l2vs")
+
+[connection signal="item_selected" from="." to="." method="_on_item_selected"]

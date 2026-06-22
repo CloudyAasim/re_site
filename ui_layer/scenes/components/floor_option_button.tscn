@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bjxjqjeh7d6it"]
+
+[ext_resource type="PackedScene" uid="uid://dg2xqjlleqad3" path="res://ui_layer/scenes/components/base/BaseOptionButton.tscn" id="1_byjpw"]
+
+[sub_resource type="GDScript" id="GDScript_byjpw"]
+script/source = "extends OptionButton
+
+func _ready():
+	LocaleManager.locale_changed.connect(_update_locale)
+	DataContext.basic_data_loaded.connect(_refresh_floor_options) # 监听数据加载完成信号
+	_update_locale()
+
+func _update_locale():
+	pass
+
+func _refresh_floor_options():
+	pass
+"
+
+[node name="FloorOptionButton" unique_id=1318360669 instance=ExtResource("1_byjpw")]
+script = SubResource("GDScript_byjpw")

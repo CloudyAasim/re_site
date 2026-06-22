@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cisp7aegeo5bw"]
+
+[ext_resource type="PackedScene" uid="uid://bxy7tfgwmnfv4" path="res://ui_layer/scenes/components/base/BaseItemList.tscn" id="1_ej677"]
+[ext_resource type="Script" uid="uid://c0xpepeh3idxf" path="res://ui_layer/scripts/components/reservations_me_list.gd" id="2_juceu"]
+
+[node name="ReservationsMeList" unique_id=999221146 instance=ExtResource("1_ej677")]
+auto_width = true
+script = ExtResource("2_juceu")

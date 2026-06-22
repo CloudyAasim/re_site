@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dxf4iwup1htyf"]
+
+[ext_resource type="PackedScene" uid="uid://bs4eee2s5m7of" path="res://ui_layer/scenes/components/base/BaseButton.tscn" id="1_2iox5"]
+[ext_resource type="Script" uid="uid://b6gyf3lvgugi6" path="res://ui_layer/scripts/components/back_home_page_button.gd" id="2_igmb4"]
+
+[node name="BackHomePageButton" unique_id=1890459965 instance=ExtResource("1_2iox5")]
+script = ExtResource("2_igmb4")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

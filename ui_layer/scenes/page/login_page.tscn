@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://b8sjw886qtvm6"]
+
+[ext_resource type="Script" uid="uid://ctsio0f4g04uq" path="res://ui_layer/scripts/page/login_page.gd" id="1_f73xa"]
+[ext_resource type="PackedScene" uid="uid://bw7slhs4dd3w2" path="res://ui_layer/scenes/components/base/BaseLineEdit.tscn" id="2_1oc73"]
+[ext_resource type="PackedScene" uid="uid://bs4eee2s5m7of" path="res://ui_layer/scenes/components/base/BaseButton.tscn" id="4_qdbo5"]
+[ext_resource type="PackedScene" uid="uid://dp0an73jysn85" path="res://ui_layer/scenes/components/base/BaseLabel.tscn" id="5_xha61"]
+
+[node name="LoginPage" type="Node" unique_id=1538282660 node_paths=PackedStringArray("tip_label", "username_input", "password_input", "sign_in_button", "initial_focus_button", "unlogin_setting_button", "quit_button", "error_label", "server_line_edit", "server_button")]
+script = ExtResource("1_f73xa")
+tip_label = NodePath("LoginPageUI/LoginContainer/TipLabel")
+username_input = NodePath("LoginPageUI/LoginContainer/UsernameInput")
+password_input = NodePath("LoginPageUI/LoginContainer/PasswordInput")
+sign_in_button = NodePath("LoginPageUI/LoginContainer/SignInButton")
+initial_focus_button = NodePath("LoginPageUI/LoginContainer/UsernameInput")
+unlogin_setting_button = NodePath("LoginPageUI/LoginContainer/HBoxContainer/UnloginSettingButton")
+quit_button = NodePath("LoginPageUI/LoginContainer/HBoxContainer/QuitButton")
+error_label = NodePath("LoginPageUI/LoginContainer/ErrorLabel")
+server_line_edit = NodePath("LoginPageUI/LoginContainer/ServerContainer/ServerLineEdit")
+server_button = NodePath("LoginPageUI/LoginContainer/ServerContainer/ServerButton")
+
+[node name="LoginPageUI" type="CanvasLayer" parent="." unique_id=2008143360]
+
+[node name="LoginContainer" type="VBoxContainer" parent="LoginPageUI" unique_id=1327480637]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = -80.0
+offset_right = 152.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="TipLabel" parent="LoginPageUI/LoginContainer" unique_id=512959548 instance=ExtResource("5_xha61")]
+layout_mode = 2
+
+[node name="ServerContainer" type="HBoxContainer" parent="LoginPageUI/LoginContainer" unique_id=2122021331]
+layout_mode = 2
+
+[node name="ServerLineEdit" parent="LoginPageUI/LoginContainer/ServerContainer" unique_id=1365136757 instance=ExtResource("2_1oc73")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ServerButton" parent="LoginPageUI/LoginContainer/ServerContainer" unique_id=727055259 instance=ExtResource("4_qdbo5")]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="UsernameInput" parent="LoginPageUI/LoginContainer" unique_id=1343590030 instance=ExtResource("2_1oc73")]
+layout_mode = 2
+
+[node name="PasswordInput" parent="LoginPageUI/LoginContainer" unique_id=1538830601 instance=ExtResource("2_1oc73")]
+layout_mode = 2
+secret = true
+
+[node name="SignInButton" parent="LoginPageUI/LoginContainer" unique_id=1890459965 instance=ExtResource("4_qdbo5")]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="LoginPageUI/LoginContainer" unique_id=555433826]
+layout_mode = 2
+alignment = 1
+
+[node name="UnloginSettingButton" parent="LoginPageUI/LoginContainer/HBoxContainer" unique_id=813676385 instance=ExtResource("4_qdbo5")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="QuitButton" parent="LoginPageUI/LoginContainer/HBoxContainer" unique_id=335573424 instance=ExtResource("4_qdbo5")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ErrorLabel" parent="LoginPageUI/LoginContainer" unique_id=57085508 instance=ExtResource("5_xha61")]
+layout_mode = 2
+
+[connection signal="pressed" from="LoginPageUI/LoginContainer/ServerContainer/ServerButton" to="." method="_on_server_button_pressed"]
+[connection signal="text_submitted" from="LoginPageUI/LoginContainer/UsernameInput" to="." method="_on_username_input_text_submitted"]
+[connection signal="text_submitted" from="LoginPageUI/LoginContainer/PasswordInput" to="." method="_on_password_input_text_submitted"]
+[connection signal="pressed" from="LoginPageUI/LoginContainer/SignInButton" to="." method="_on_sign_in_button_button_up"]
+[connection signal="pressed" from="LoginPageUI/LoginContainer/HBoxContainer/UnloginSettingButton" to="." method="_on_unlogin_setting_button_pressed"]
+[connection signal="pressed" from="LoginPageUI/LoginContainer/HBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

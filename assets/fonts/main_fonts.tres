@@ -1,0 +1,8 @@
+[gd_resource type="FontVariation" format=3 uid="uid://baa5ch0uckt12"]
+
+[ext_resource type="FontFile" uid="uid://bc56waxs2jocc" path="res://assets/fonts/SourceHanSans/SourceHanSans-Normal.ttc" id="1_4elrd"]
+[ext_resource type="FontFile" uid="uid://bknkfkha8fnii" path="res://assets/fonts/NotoColorEmoji/NotoColorEmoji.ttf" id="2_d0njl"]
+
+[resource]
+fallbacks = Array[Font]([ExtResource("2_d0njl")])
+base_font = ExtResource("1_4elrd")

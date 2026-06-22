@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://bsyder8rraxw1"]
+
+[ext_resource type="Script" uid="uid://dpvohf7t2rnww" path="res://ui_layer/scripts/page/seat_page/seat_page.gd" id="1_gfoa0"]
+[ext_resource type="Script" uid="uid://pnei4iajwnbs" path="res://ui_layer/scripts/page/seat_page/status_bar.gd" id="2_tkp8v"]
+[ext_resource type="PackedScene" uid="uid://bs4eee2s5m7of" path="res://ui_layer/scenes/components/base/BaseButton.tscn" id="3_n8kuj"]
+[ext_resource type="PackedScene" uid="uid://dxf4iwup1htyf" path="res://ui_layer/scenes/components/back_home_page_button.tscn" id="4_kct5w"]
+[ext_resource type="PackedScene" uid="uid://ieqfpgji0dq3" path="res://ui_layer/scenes/components/filter_group.tscn" id="5_qx5s3"]
+[ext_resource type="PackedScene" uid="uid://dukurrgwtx73u" path="res://ui_layer/scenes/components/seat_map_view.tscn" id="6_yh2g2"]
+[ext_resource type="PackedScene" uid="uid://dp0an73jysn85" path="res://ui_layer/scenes/components/base/BaseLabel.tscn" id="7_44afu"]
+[ext_resource type="PackedScene" uid="uid://cisp7aegeo5bw" path="res://ui_layer/scenes/components/reservations_me_list.tscn" id="8_03qak"]
+[ext_resource type="PackedScene" uid="uid://0fxunu8q7s62" path="res://ui_layer/scenes/components/seat_console_control.tscn" id="9_bth3i"]
+
+[node name="SeatPage" type="Node" unique_id=899290254 node_paths=PackedStringArray("seat_map_view", "seat_console_control", "main_reservation_list", "reservations_title_label", "initial_focus_button")]
+script = ExtResource("1_gfoa0")
+seat_map_view = NodePath("CanvasLayer/HBoxContainer/VBoxContainer/SeatMapView")
+seat_console_control = NodePath("CanvasLayer/SeatConsoleControl")
+main_reservation_list = NodePath("CanvasLayer/HBoxContainer/VBoxContainer/VBoxContainer/ReservationsMeList")
+reservations_title_label = NodePath("CanvasLayer/HBoxContainer/VBoxContainer/VBoxContainer/ReservationsMeName")
+initial_focus_button = NodePath("CanvasLayer/HBoxContainer/VBoxContainer/FilterGroup/FloorOptionButton")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=41816181]
+
+[node name="HBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=1074735651]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.0
+offset_top = -34.0
+offset_right = 52.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="StatusBar" type="HBoxContainer" parent="CanvasLayer/HBoxContainer" unique_id=1522720951 node_paths=PackedStringArray("filter_group", "seat_map_view", "reservations_me", "btn_filter_group", "btn_seat_map_view", "btn_reservations_me", "prev_button", "next_button", "focus_filter_from_bar", "focus_seat_from_bar", "focus_reservations_from_bar", "focus_seat_from_prev", "focus_reservations_from_prev", "focus_filter_from_next", "focus_seat_from_next")]
+layout_mode = 2
+script = ExtResource("2_tkp8v")
+filter_group = NodePath("../VBoxContainer/FilterGroup")
+seat_map_view = NodePath("../VBoxContainer/SeatMapView")
+reservations_me = NodePath("../VBoxContainer/VBoxContainer")
+btn_filter_group = NodePath("FilterGroupButton")
+btn_seat_map_view = NodePath("SeatMapViewButton")
+btn_reservations_me = NodePath("ReservationsMeButton")
+prev_button = NodePath("../HBoxContainer/PrevButton")
+next_button = NodePath("../HBoxContainer/NextButton")
+focus_filter_from_bar = NodePath("../VBoxContainer/FilterGroup/FloorOptionButton")
+focus_seat_from_bar = NodePath("../VBoxContainer/SeatMapView/SeatList")
+focus_reservations_from_bar = NodePath("../VBoxContainer/VBoxContainer/ReservationsMeList")
+focus_seat_from_prev = NodePath("../VBoxContainer/SeatMapView/SeatList")
+focus_reservations_from_prev = NodePath("../VBoxContainer/VBoxContainer/ReservationsMeList")
+focus_filter_from_next = NodePath("../VBoxContainer/FilterGroup/FloorOptionButton")
+focus_seat_from_next = NodePath("../HBoxContainer/PrevButton")
+
+[node name="FilterGroupButton" parent="CanvasLayer/HBoxContainer/StatusBar" unique_id=1890459965 instance=ExtResource("3_n8kuj")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SeatMapViewButton" parent="CanvasLayer/HBoxContainer/StatusBar" unique_id=594967775 instance=ExtResource("3_n8kuj")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ReservationsMeButton" parent="CanvasLayer/HBoxContainer/StatusBar" unique_id=274139045 instance=ExtResource("3_n8kuj")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BackHomePageButton" parent="CanvasLayer/HBoxContainer/StatusBar" unique_id=1234039573 instance=ExtResource("4_kct5w")]
+layout_mode = 2
+
+[node name="VBoxContainer" type="HBoxContainer" parent="CanvasLayer/HBoxContainer" unique_id=187796492]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="FilterGroup" parent="CanvasLayer/HBoxContainer/VBoxContainer" unique_id=2039393040 instance=ExtResource("5_qx5s3")]
+layout_mode = 2
+
+[node name="SeatMapView" parent="CanvasLayer/HBoxContainer/VBoxContainer" unique_id=453975489 instance=ExtResource("6_yh2g2")]
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/VBoxContainer" unique_id=1370227888]
+visible = false
+layout_mode = 2
+
+[node name="ReservationsMeName" parent="CanvasLayer/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=512959548 instance=ExtResource("7_44afu")]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="ReservationsMeList" parent="CanvasLayer/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=999221146 instance=ExtResource("8_03qak")]
+custom_minimum_size = Vector2(200, 150)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/HBoxContainer" unique_id=154173514]
+layout_mode = 2
+
+[node name="PrevButton" parent="CanvasLayer/HBoxContainer/HBoxContainer" unique_id=1543036106 instance=ExtResource("3_n8kuj")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NextButton" parent="CanvasLayer/HBoxContainer/HBoxContainer" unique_id=932636395 instance=ExtResource("3_n8kuj")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SeatConsoleControl" parent="CanvasLayer" unique_id=231217070 instance=ExtResource("9_bth3i")]
+visible = false
+
+[editable path="CanvasLayer/HBoxContainer/VBoxContainer/FilterGroup"]
+[editable path="CanvasLayer/HBoxContainer/VBoxContainer/SeatMapView"]

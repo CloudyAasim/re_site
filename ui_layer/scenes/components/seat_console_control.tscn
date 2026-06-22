@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://0fxunu8q7s62"]
+
+[ext_resource type="Script" uid="uid://dfpduj4whg2bq" path="res://ui_layer/scripts/components/seat_console_control.gd" id="1_syic7"]
+[ext_resource type="Shader" uid="uid://d21bxlio33p03" path="res://ui_layer/shaders/mask.gdshader" id="2_f0rri"]
+[ext_resource type="PackedScene" uid="uid://bs4eee2s5m7of" path="res://ui_layer/scenes/components/base/BaseButton.tscn" id="2_syic7"]
+[ext_resource type="PackedScene" uid="uid://cisp7aegeo5bw" path="res://ui_layer/scenes/components/reservations_me_list.tscn" id="4_f0rri"]
+[ext_resource type="PackedScene" uid="uid://dp0an73jysn85" path="res://ui_layer/scenes/components/base/BaseLabel.tscn" id="5_cl844"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f0rri"]
+shader = ExtResource("2_f0rri")
+shader_parameter/blur_amount = 2.0
+
+[node name="SeatConsoleControl" type="Control" unique_id=231217070 node_paths=PackedStringArray("close_button", "reservations_button", "check_in_button", "suspend_button", "finish_button", "delete_reservations_button", "reservation_list", "error_label", "current_seat_id_label", "current_seat_status_label")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_syic7")
+close_button = NodePath("Container/HBoxContainer/VBoxContainer/HBoxContainer/ContentPanel/TitleBar/CloseButton")
+reservations_button = NodePath("Container/HBoxContainer/VBoxContainer/HBoxContainer/ContentPanel/SeatConsoleContainer/ReservationsButton")
+check_in_button = NodePath("Container/HBoxContainer/VBoxContainer/HBoxContainer/ContentPanel/SeatConsoleContainer/CheckInButton")
+suspend_button = NodePath("Container/HBoxContainer/VBoxContainer/HBoxContainer/ContentPanel/SeatConsoleContainer/SuspendButton")
+finish_button = NodePath("Container/HBoxContainer/VBoxContainer/HBoxContainer/ContentPanel/SeatConsoleContainer/FinishButton")
+delete_reservations_button = NodePath("Container/HBoxContainer/VBoxContainer/HBoxContainer/ContentPanel/SeatConsoleContainer/DeleteReservationsButtons")
+reservation_list = NodePath("Container/HBoxContainer/VBoxContainer/HBoxContainer/ReservationsMeList")
+error_label = NodePath("Container/HBoxContainer/VBoxContainer/ErrorLabel")
+current_seat_id_label = NodePath("Container/HBoxContainer/VBoxContainer/SeatInfoContainer/IDLabel")
+current_seat_status_label = NodePath("Container/HBoxContainer/VBoxContainer/SeatInfoContainer/StatusLabel")
+
+[node name="Container" type="Panel" parent="." unique_id=1214882194]
+material = SubResource("ShaderMaterial_f0rri")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Container" unique_id=907620841]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -61.0
+offset_right = 30.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container/HBoxContainer" unique_id=910764439]
+layout_mode = 2
+alignment = 1
+
+[node name="SeatInfoContainer" type="HBoxContainer" parent="Container/HBoxContainer/VBoxContainer" unique_id=1492157774]
+layout_mode = 2
+alignment = 1
+
+[node name="IDLabel" parent="Container/HBoxContainer/VBoxContainer/SeatInfoContainer" unique_id=512959548 instance=ExtResource("5_cl844")]
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_alignment = 1
+
+[node name="StatusLabel" parent="Container/HBoxContainer/VBoxContainer/SeatInfoContainer" unique_id=677589454 instance=ExtResource("5_cl844")]
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Container/HBoxContainer/VBoxContainer" unique_id=1283483083]
+layout_mode = 2
+alignment = 1
+
+[node name="ContentPanel" type="VBoxContainer" parent="Container/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1642402247]
+layout_mode = 2
+
+[node name="TitleBar" type="HBoxContainer" parent="Container/HBoxContainer/VBoxContainer/HBoxContainer/ContentPanel" unique_id=1702439113]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="CloseButton" parent="Container/HBoxContainer/VBoxContainer/HBoxContainer/ContentPanel/TitleBar" unique_id=1890459965 instance=ExtResource("2_syic7")]
+layout_mode = 2
+
+[node name="SeatConsoleContainer" type="VBoxContainer" parent="Container/HBoxContainer/VBoxContainer/HBoxContainer/ContentPanel" unique_id=776090435]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ReservationsButton" parent="Container/HBoxContainer/VBoxContainer/HBoxContainer/ContentPanel/SeatConsoleContainer" unique_id=1914850692 instance=ExtResource("2_syic7")]
+layout_mode = 2
+
+[node name="CheckInButton" parent="Container/HBoxContainer/VBoxContainer/HBoxContainer/ContentPanel/SeatConsoleContainer" unique_id=1849528415 instance=ExtResource("2_syic7")]
+layout_mode = 2
+
+[node name="SuspendButton" parent="Container/HBoxContainer/VBoxContainer/HBoxContainer/ContentPanel/SeatConsoleContainer" unique_id=1115142589 instance=ExtResource("2_syic7")]
+layout_mode = 2
+
+[node name="FinishButton" parent="Container/HBoxContainer/VBoxContainer/HBoxContainer/ContentPanel/SeatConsoleContainer" unique_id=1927132408 instance=ExtResource("2_syic7")]
+layout_mode = 2
+
+[node name="DeleteReservationsButtons" parent="Container/HBoxContainer/VBoxContainer/HBoxContainer/ContentPanel/SeatConsoleContainer" unique_id=1592495099 instance=ExtResource("2_syic7")]
+layout_mode = 2
+
+[node name="ReservationsMeList" parent="Container/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=999221146 instance=ExtResource("4_f0rri")]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="ErrorLabel" parent="Container/HBoxContainer/VBoxContainer" unique_id=1678823973 instance=ExtResource("5_cl844")]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2

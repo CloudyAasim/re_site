@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dukurrgwtx73u"]
+
+[ext_resource type="Script" uid="uid://biua0f6pbcq2i" path="res://ui_layer/scripts/components/seat_map_view.gd" id="1_n6ib4"]
+[ext_resource type="PackedScene" uid="uid://dp0an73jysn85" path="res://ui_layer/scenes/components/base/BaseLabel.tscn" id="1_nt7nw"]
+[ext_resource type="PackedScene" uid="uid://bxy7tfgwmnfv4" path="res://ui_layer/scenes/components/base/BaseItemList.tscn" id="2_n6ib4"]
+
+[node name="SeatMapView" type="VBoxContainer" unique_id=453975489 node_paths=PackedStringArray("floor_label", "seat_list", "canvas_scroll_container", "canvas_container")]
+offset_right = 40.0
+offset_bottom = 40.0
+alignment = 1
+script = ExtResource("1_n6ib4")
+floor_label = NodePath("FloorLabel")
+seat_list = NodePath("SeatList")
+canvas_scroll_container = NodePath("CanvasScrollContainer")
+canvas_container = NodePath("CanvasScrollContainer/CanvasContainer")
+
+[node name="FloorLabel" parent="." unique_id=512959548 instance=ExtResource("1_nt7nw")]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="SeatList" parent="." unique_id=999221146 instance=ExtResource("2_n6ib4")]
+custom_minimum_size = Vector2(200, 150)
+layout_mode = 2
+auto_width = true
+
+[node name="CanvasScrollContainer" type="ScrollContainer" parent="." unique_id=1490143212]
+custom_minimum_size = Vector2(200, 150)
+layout_mode = 2
+
+[node name="CanvasContainer" type="Control" parent="CanvasScrollContainer" unique_id=139633495]
+custom_minimum_size = Vector2(200, 150)
+layout_mode = 2

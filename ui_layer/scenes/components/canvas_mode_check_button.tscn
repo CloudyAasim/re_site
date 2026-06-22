@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dghpp3ah0oppr"]
+
+[ext_resource type="PackedScene" uid="uid://hkyumlf78gvf" path="res://ui_layer/scenes/components/base/BaseCheckButton.tscn" id="1_bad4v"]
+[ext_resource type="Script" uid="uid://cn3btoq2vafnv" path="res://ui_layer/scripts/components/canvas_mode_check_box.gd" id="2_n16fj"]
+
+[node name="CanvasModeCheckButton" unique_id=1563318303 instance=ExtResource("1_bad4v")]
+script = ExtResource("2_n16fj")

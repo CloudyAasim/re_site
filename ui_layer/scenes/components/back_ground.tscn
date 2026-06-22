@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dd2lhfoearw4u"]
+
+[ext_resource type="Shader" uid="uid://bwy0xslyjxfbt" path="res://ui_layer/shaders/background.gdshader" id="1_hypbe"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v2ei8"]
+shader = ExtResource("1_hypbe")
+shader_parameter/color1 = Color(0.8, 0.8, 1, 1)
+shader_parameter/color2 = Color(0.8, 1, 0.8, 1)
+shader_parameter/speed = 0.3
+
+[node name="BackGround" type="Node" unique_id=2016963859]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1954575138]
+material = SubResource("ShaderMaterial_v2ei8")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.9372549, 0.4862745, 1)

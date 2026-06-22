@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://ieqfpgji0dq3"]
+
+[ext_resource type="PackedScene" uid="uid://dg2xqjlleqad3" path="res://ui_layer/scenes/components/base/BaseOptionButton.tscn" id="1_1da5o"]
+[ext_resource type="Script" uid="uid://1kq3e2y6qk3i" path="res://ui_layer/scripts/components/filter_group.gd" id="1_8mtl7"]
+
+[node name="FilterGroup" type="VBoxContainer" unique_id=2039393040 node_paths=PackedStringArray("floor_option", "slot_option", "year_option", "month_option", "day_option")]
+offset_right = 40.0
+offset_bottom = 40.0
+alignment = 1
+script = ExtResource("1_8mtl7")
+floor_option = NodePath("FloorOptionButton")
+slot_option = NodePath("SlotOptionButton")
+year_option = NodePath("HBoxContainer/YearOptionButton")
+month_option = NodePath("HBoxContainer/MonthOptionButton")
+day_option = NodePath("HBoxContainer/DayOptionButton")
+
+[node name="FloorOptionButton" parent="." unique_id=1318360669 instance=ExtResource("1_1da5o")]
+layout_mode = 2
+
+[node name="SlotOptionButton" parent="." unique_id=1186991073 instance=ExtResource("1_1da5o")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1239998842]
+layout_mode = 2
+
+[node name="YearOptionButton" parent="HBoxContainer" unique_id=1623620108 instance=ExtResource("1_1da5o")]
+layout_mode = 2
+
+[node name="MonthOptionButton" parent="HBoxContainer" unique_id=343514441 instance=ExtResource("1_1da5o")]
+layout_mode = 2
+
+[node name="DayOptionButton" parent="HBoxContainer" unique_id=208906546 instance=ExtResource("1_1da5o")]
+layout_mode = 2

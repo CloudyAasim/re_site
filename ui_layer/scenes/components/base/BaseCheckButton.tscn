@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://hkyumlf78gvf"]
+
+[ext_resource type="StyleBox" uid="uid://bv3aqnx5tvlwj" path="res://ui_layer/themes/base_white_focus_style_box_flat.tres" id="1_bs0ah"]
+[ext_resource type="StyleBox" uid="uid://d122tlq88sryc" path="res://ui_layer/themes/base_white_style_box_flat.tres" id="2_ouf8r"]
+
+[sub_resource type="Theme" id="Theme_15iay"]
+CheckButton/colors/font_color = Color(0.13725491, 0.13725491, 0.019607844, 1)
+CheckButton/colors/font_focus_color = Color(0.13725491, 0.13725491, 0.019607844, 1)
+CheckButton/colors/font_hover_color = Color(0.13725491, 0.13725491, 0.019607844, 1)
+CheckButton/colors/font_hover_pressed_color = Color(0.13725491, 0.13725491, 0.019607844, 1)
+CheckButton/colors/font_pressed_color = Color(0.13725491, 0.13725491, 0.019607844, 1)
+CheckButton/styles/focus = ExtResource("1_bs0ah")
+CheckButton/styles/hover = ExtResource("1_bs0ah")
+CheckButton/styles/hover_pressed = ExtResource("1_bs0ah")
+CheckButton/styles/normal = ExtResource("2_ouf8r")
+CheckButton/styles/pressed = ExtResource("2_ouf8r")
+
+[node name="BaseCheckButton" type="CheckButton" unique_id=1563318303]
+theme = SubResource("Theme_15iay")

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bw7slhs4dd3w2"]
+
+[ext_resource type="StyleBox" uid="uid://bv3aqnx5tvlwj" path="res://ui_layer/themes/base_white_focus_style_box_flat.tres" id="1_g61j5"]
+[ext_resource type="StyleBox" uid="uid://d122tlq88sryc" path="res://ui_layer/themes/base_white_style_box_flat.tres" id="1_pmjs8"]
+
+[sub_resource type="Theme" id="Theme_g61j5"]
+LineEdit/colors/font_color = Color(0.13725491, 0.13725491, 0.019607844, 1)
+LineEdit/colors/font_placeholder_color = Color(0.13725491, 0.13725491, 0.019607844, 0.27058825)
+LineEdit/styles/focus = ExtResource("1_g61j5")
+LineEdit/styles/normal = ExtResource("1_pmjs8")
+
+[node name="BaseLineEdit" type="LineEdit" unique_id=1343590030]
+theme = SubResource("Theme_g61j5")

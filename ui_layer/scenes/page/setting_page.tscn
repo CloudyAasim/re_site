@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dlqmw6sy8n0u4"]
+
+[ext_resource type="Script" uid="uid://cj1r1c4lhxrv4" path="res://ui_layer/scripts/page/setting_page.gd" id="1_5t8pd"]
+[ext_resource type="PackedScene" uid="uid://dxf4iwup1htyf" path="res://ui_layer/scenes/components/back_home_page_button.tscn" id="2_saatc"]
+[ext_resource type="PackedScene" uid="uid://b6o8hxnhdr0ej" path="res://ui_layer/scenes/components/language_option_button.tscn" id="3_0eo7y"]
+[ext_resource type="PackedScene" uid="uid://c6wvydkh5e1dd" path="res://ui_layer/scenes/components/virtual_keybroad_button.tscn" id="4_saatc"]
+[ext_resource type="PackedScene" uid="uid://cmdbg2vtexlxy" path="res://ui_layer/scenes/components/info_label.tscn" id="5_0eo7y"]
+[ext_resource type="PackedScene" uid="uid://dghpp3ah0oppr" path="res://ui_layer/scenes/components/canvas_mode_check_button.tscn" id="6_a7vtk"]
+
+[node name="SettingPage" type="Node" unique_id=1616079859 node_paths=PackedStringArray("initial_focus_control")]
+script = ExtResource("1_5t8pd")
+initial_focus_control = NodePath("CanvasLayer/VBoxContainer/BackHomePageButton")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=411509604]
+
+[node name="InfoLabel" parent="CanvasLayer" unique_id=1874087293 instance=ExtResource("5_0eo7y")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -105.0
+offset_top = -50.0
+offset_right = 105.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=705856]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -39.0
+offset_right = 21.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="BackHomePageButton" parent="CanvasLayer/VBoxContainer" unique_id=1890459965 instance=ExtResource("2_saatc")]
+layout_mode = 2
+text = "Hellp"
+
+[node name="LanguageOptionButton" parent="CanvasLayer/VBoxContainer" unique_id=1318360669 instance=ExtResource("3_0eo7y")]
+layout_mode = 2
+
+[node name="VirtualKeybroadButton" parent="CanvasLayer/VBoxContainer" unique_id=1563318303 instance=ExtResource("4_saatc")]
+layout_mode = 2
+
+[node name="CanvasModeCheckButton" parent="CanvasLayer/VBoxContainer" unique_id=845409222 instance=ExtResource("6_a7vtk")]
+layout_mode = 2

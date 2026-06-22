@@ -1,0 +1,323 @@
+<svg id="svgCanvas" width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+                <!-- 定义渐变和滤镜 -->
+                <defs>
+                    <!-- 背景渐变 -->
+                    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#e8f4f8;stop-opacity:1"/>
+                        <stop offset="100%" style="stop-color:#d4e8f0;stop-opacity:1"/>
+                    </linearGradient>
+                    <!-- 墙壁渐变 -->
+                    <linearGradient id="wallGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#f5f0e8;stop-opacity:1"/>
+                        <stop offset="100%" style="stop-color:#e8e0d4;stop-opacity:1"/>
+                    </linearGradient>
+                    <!-- 桌面渐变 -->
+                    <linearGradient id="deskGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#a08060;stop-opacity:1"/>
+                        <stop offset="50%" style="stop-color:#8b6f4e;stop-opacity:1"/>
+                        <stop offset="100%" style="stop-color:#7a5f3e;stop-opacity:1"/>
+                    </linearGradient>
+                    <!-- 屏幕渐变 -->
+                    <linearGradient id="screenGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1"/>
+                        <stop offset="100%" style="stop-color:#16213e;stop-opacity:1"/>
+                    </linearGradient>
+                    <!-- 台灯渐变 -->
+                    <linearGradient id="lampGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#4a5568;stop-opacity:1"/>
+                        <stop offset="100%" style="stop-color:#2d3748;stop-opacity:1"/>
+                    </linearGradient>
+                    <!-- 植物渐变 -->
+                    <linearGradient id="plantGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#48bb78;stop-opacity:1"/>
+                        <stop offset="100%" style="stop-color:#38a169;stop-opacity:1"/>
+                    </linearGradient>
+                    <!-- 咖啡渐变 -->
+                    <linearGradient id="coffeeGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#6b4423;stop-opacity:1"/>
+                        <stop offset="100%" style="stop-color:#4a2c17;stop-opacity:1"/>
+                    </linearGradient>
+                    <!-- 阴影滤镜 -->
+                    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+                        <feOffset dx="2" dy="4" result="offsetblur"/>
+                        <feComponentTransfer>
+                            <feFuncA type="linear" slope="0.3"/>
+                        </feComponentTransfer>
+                        <feMerge>
+                            <feMergeNode/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+                    <!-- 柔和阴影 -->
+                    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+                        <feOffset dx="1" dy="2" result="offsetblur"/>
+                        <feComponentTransfer>
+                            <feFuncA type="linear" slope="0.2"/>
+                        </feComponentTransfer>
+                        <feMerge>
+                            <feMergeNode/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+                </defs>
+
+                <!-- 地板（透明背景，不绘制墙壁和地板） -->
+
+                <!-- 书桌阴影 -->
+                <ellipse cx="400" cy="485" rx="240" ry="15" fill="#000" opacity="0.15"/>
+
+                <!-- 书桌桌腿 -->
+                <rect x="180" y="420" width="18" height="65" fill="#6b5438" rx="2"/>
+                <rect x="602" y="420" width="18" height="65" fill="#6b5438" rx="2"/>
+                <!-- 桌腿阴影 -->
+                <rect x="180" y="420" width="18" height="65" fill="#000" opacity="0.1" rx="2"/>
+                <rect x="602" y="420" width="18" height="65" fill="#000" opacity="0.1" rx="2"/>
+
+                <!-- 书桌主体 -->
+                <rect x="160" y="340" width="480" height="80" fill="url(#deskGradient)" rx="6" filter="url(#softShadow)"/>
+                <!-- 桌面高光 -->
+                <rect x="160" y="340" width="480" height="15" fill="#fff" opacity="0.1" rx="6"/>
+                <!-- 桌面边缘 -->
+                <rect x="160" y="415" width="480" height="8" fill="#6b5438" rx="2"/>
+
+                <!-- 电脑显示器 -->
+                <!-- 显示器底座 -->
+                <rect x="365" y="325" width="70" height="15" fill="#2d3748" rx="3"/>
+                <rect x="385" y="305" width="30" height="25" fill="#4a5568" rx="2"/>
+                <!-- 显示器主体 -->
+                <rect x="300" y="180" width="200" height="130" fill="#1a202c" stroke="#2d3748" stroke-width="3" rx="6" filter="url(#shadow)"/>
+                <!-- 屏幕 -->
+                <rect x="310" y="190" width="180" height="110" fill="url(#screenGradient)" rx="3"/>
+                <!-- 屏幕内容 - 代码编辑器风格 -->
+                <rect x="320" y="200" width="80" height="6" fill="#63b3ed" opacity="0.9" rx="2"/>
+                <rect x="320" y="212" width="120" height="4" fill="#a0aec0" opacity="0.7" rx="1"/>
+                <rect x="320" y="220" width="100" height="4" fill="#68d391" opacity="0.8" rx="1"/>
+                <rect x="320" y="228" width="140" height="4" fill="#a0aec0" opacity="0.7" rx="1"/>
+                <rect x="320" y="240" width="60" height="6" fill="#f6ad55" opacity="0.9" rx="2"/>
+                <rect x="320" y="252" width="110" height="4" fill="#a0aec0" opacity="0.7" rx="1"/>
+                <rect x="320" y="260" width="90" height="4" fill="#fc8181" opacity="0.8" rx="1"/>
+                <rect x="320" y="272" width="130" height="4" fill="#a0aec0" opacity="0.7" rx="1"/>
+                <rect x="320" y="280" width="70" height="4" fill="#68d391" opacity="0.8" rx="1"/>
+                <!-- 屏幕反光 -->
+                <rect x="310" y="190" width="180" height="30" fill="#fff" opacity="0.03" rx="3"/>
+
+                <!-- 键盘 -->
+                <rect x="320" y="355" width="160" height="40" fill="#2d3748" stroke="#1a202c" stroke-width="1.5" rx="5" filter="url(#softShadow)"/>
+                <!-- 键盘按键 -->
+                <g opacity="0.6">
+                    <rect x="328" y="362" width="12" height="8" fill="#4a5568" rx="1"/>
+                    <rect x="344" y="362" width="12" height="8" fill="#4a5568" rx="1"/>
+                    <rect x="360" y="362" width="12" height="8" fill="#4a5568" rx="1"/>
+                    <rect x="376" y="362" width="12" height="8" fill="#4a5568" rx="1"/>
+                    <rect x="392" y="362" width="12" height="8" fill="#4a5568" rx="1"/>
+                    <rect x="408" y="362" width="12" height="8" fill="#4a5568" rx="1"/>
+                    <rect x="424" y="362" width="12" height="8" fill="#4a5568" rx="1"/>
+                    <rect x="440" y="362" width="12" height="8" fill="#4a5568" rx="1"/>
+                    <rect x="456" y="362" width="12" height="8" fill="#4a5568" rx="1"/>
+                    <rect x="328" y="374" width="12" height="8" fill="#4a5568" rx="1"/>
+                    <rect x="344" y="374" width="12" height="8" fill="#4a5568" rx="1"/>
+                    <rect x="360" y="374" width="12" height="8" fill="#4a5568" rx="1"/>
+                    <rect x="376" y="374" width="12" height="8" fill="#4a5568" rx="1"/>
+                    <rect x="392" y="374" width="12" height="8" fill="#4a5568" rx="1"/>
+                    <rect x="408" y="374" width="12" height="8" fill="#4a5568" rx="1"/>
+                    <rect x="424" y="374" width="12" height="8" fill="#4a5568" rx="1"/>
+                    <rect x="440" y="374" width="12" height="8" fill="#4a5568" rx="1"/>
+                    <rect x="456" y="374" width="12" height="8" fill="#4a5568" rx="1"/>
+                    <rect x="340" y="386" width="80" height="6" fill="#4a5568" rx="1"/>
+                </g>
+
+                <!-- 鼠标 -->
+                <ellipse cx="510" cy="375" rx="15" ry="22" fill="#2d3748" stroke="#1a202c" stroke-width="1.5" filter="url(#softShadow)"/>
+                <ellipse cx="510" cy="370" rx="12" ry="15" fill="#4a5568"/>
+                <line x1="510" y1="360" x2="510" y2="375" stroke="#1a202c" stroke-width="1"/>
+
+                <!-- 台灯 -->
+                <g transform="translate(210, 325)">
+                    <!-- 台灯底座 -->
+                    <ellipse cx="0" cy="15" rx="22" ry="7" fill="#2d3748" filter="url(#softShadow)"/>
+                    <ellipse cx="0" cy="13" rx="22" ry="7" fill="#4a5568"/>
+                    <ellipse cx="0" cy="11" rx="18" ry="5" fill="#2d3748"/>
+                    
+                    <!-- 台灯下支架 -->
+                    <rect x="-3" y="-30" width="6" height="43" fill="#4a5568" rx="2"/>
+                    
+                    <!-- 台灯关节 -->
+                    <circle cx="0" cy="-30" r="5" fill="#2d3748" stroke="#1a202c" stroke-width="1.5"/>
+                    <circle cx="0" cy="-30" r="2.5" fill="#4a5568"/>
+                    
+                    <!-- 台灯上支架（向右倾斜） -->
+                    <g transform="rotate(10, 0, -30)">
+                        <rect x="-3" y="-72" width="6" height="45" fill="#4a5568" rx="2"/>
+                        
+                        <!-- 台灯灯罩 -->
+                        <g transform="translate(0, -72)">
+                            <!-- 灯罩主体 - 锥形 -->
+                            <path d="M-24,0 L-17,-24 Q0,-30 17,-24 L24,0 Z" fill="#8e44ad" stroke="#7d3c98" stroke-width="1.5"/>
+                            <!-- 灯罩内部 -->
+                            <ellipse cx="0" cy="0" rx="24" ry="5" fill="#6b46c1"/>
+                            <!-- 灯泡 -->
+                            <ellipse cx="0" cy="-3" rx="8" ry="6" fill="#FFD700" opacity="0.9"/>
+                            <ellipse cx="0" cy="-5" rx="5" ry="3" fill="#FEF3C7"/>
+                        </g>
+                    </g>
+                    
+                    <!-- 灯光效果 -->
+                    <ellipse cx="10" cy="-60" rx="45" ry="32" fill="#FFD700" opacity="0.06"/>
+                    <ellipse cx="10" cy="-60" rx="30" ry="22" fill="#FFD700" opacity="0.1"/>
+                    <ellipse cx="10" cy="-60" rx="18" ry="12" fill="#FFD700" opacity="0.15"/>
+                </g>
+
+                <!-- 咖啡杯 -->
+                <g transform="translate(270, 350)">
+                    <!-- 杯碟 -->
+                    <ellipse cx="0" cy="25" rx="28" ry="8" fill="#e2e8f0" stroke="#cbd5e0" stroke-width="1"/>
+                    <!-- 杯身 -->
+                    <path d="M-18,-5 L-15,20 Q-15,25 0,25 Q15,25 15,20 L18,-5 Z" fill="#fff" stroke="#cbd5e0" stroke-width="1.5"/>
+                    <!-- 咖啡 -->
+                    <ellipse cx="0" cy="-3" rx="16" ry="6" fill="url(#coffeeGradient)"/>
+                    <!-- 杯把手 -->
+                    <path d="M18,0 Q30,0 30,10 Q30,20 18,18" fill="none" stroke="#cbd5e0" stroke-width="3" stroke-linecap="round"/>
+                    <!-- 蒸汽 -->
+                    <path d="M-5,-15 Q-8,-25 -3,-35" fill="none" stroke="#a0aec0" stroke-width="1.5" opacity="0.5" stroke-linecap="round"/>
+                    <path d="M3,-15 Q6,-25 1,-35" fill="none" stroke="#a0aec0" stroke-width="1.5" opacity="0.5" stroke-linecap="round"/>
+                    <path d="M-1,-12 Q2,-22 -2,-32" fill="none" stroke="#a0aec0" stroke-width="1" opacity="0.4" stroke-linecap="round"/>
+                </g>
+
+                <!-- 笔筒 -->
+                <g transform="translate(560, 340)">
+                    <!-- 笔筒主体 -->
+                    <rect x="-20" y="0" width="40" height="50" fill="#4299e1" stroke="#3182ce" stroke-width="1.5" rx="4" filter="url(#softShadow)"/>
+                    <ellipse cx="0" cy="0" rx="20" ry="6" fill="#63b3ed"/>
+                    <!-- 铅笔 -->
+                    <rect x="-12" y="-30" width="6" height="40" fill="#f6e05e" stroke="#d69e2e" stroke-width="0.5" rx="1"/>
+                    <polygon points="-12,-30 -9,-38 -6,-30" fill="#f6e05e" stroke="#d69e2e" stroke-width="0.5"/>
+                    <rect x="-12" y="-30" width="6" height="5" fill="#fc8181"/>
+                    <!-- 钢笔 -->
+                    <rect x="-2" y="-35" width="5" height="45" fill="#2d3748" stroke="#1a202c" stroke-width="0.5" rx="1"/>
+                    <polygon points="-2,-35 0.5,-42 3,-35" fill="#a0aec0"/>
+                    <!-- 尺子 -->
+                    <rect x="8" y="-25" width="4" height="35" fill="#e2e8f0" stroke="#cbd5e0" stroke-width="0.5" rx="1"/>
+                    <line x1="8" y1="-20" x2="12" y2="-20" stroke="#a0aec0" stroke-width="0.5"/>
+                    <line x1="8" y1="-15" x2="12" y2="-15" stroke="#a0aec0" stroke-width="0.5"/>
+                    <line x1="8" y1="-10" x2="12" y2="-10" stroke="#a0aec0" stroke-width="0.5"/>
+                    <line x1="8" y1="-5" x2="12" y2="-5" stroke="#a0aec0" stroke-width="0.5"/>
+                </g>
+
+                <!-- 书架 -->
+                <g transform="translate(650, 180)">
+                    <!-- 书架框架 -->
+                    <rect x="0" y="0" width="120" height="15" fill="#6b5438" stroke="#5a4528" stroke-width="1" rx="2" filter="url(#softShadow)"/>
+                    <rect x="0" y="100" width="120" height="15" fill="#6b5438" stroke="#5a4528" stroke-width="1" rx="2"/>
+                    <rect x="-5" y="15" width="8" height="85" fill="#6b5438" stroke="#5a4528" stroke-width="1"/>
+                    <rect x="117" y="15" width="8" height="85" fill="#6b5438" stroke="#5a4528" stroke-width="1"/>
+                    
+                    <!-- 书籍 -->
+                    <rect x="8" y="25" width="16" height="70" fill="#e53e3e" stroke="#c53030" stroke-width="1" rx="2"/>
+                    <rect x="26" y="30" width="14" height="65" fill="#38a169" stroke="#2f855a" stroke-width="1" rx="2"/>
+                    <rect x="42" y="22" width="18" height="73" fill="#3182ce" stroke="#2c5282" stroke-width="1" rx="2"/>
+                    <rect x="62" y="28" width="15" height="67" fill="#d69e2e" stroke="#b7791f" stroke-width="1" rx="2"/>
+                    <rect x="79" y="25" width="16" height="70" fill="#805ad5" stroke="#6b46c1" stroke-width="1" rx="2"/>
+                    <rect x="97" y="32" width="14" height="63" fill="#dd6b20" stroke="#c05621" stroke-width="1" rx="2"/>
+                    <!-- 书脊装饰 -->
+                    <line x1="16" y1="35" x2="16" y2="85" stroke="#fff" stroke-width="0.5" opacity="0.3"/>
+                    <line x1="51" y1="32" x2="51" y2="85" stroke="#fff" stroke-width="0.5" opacity="0.3"/>
+                    <line x1="87" y1="35" x2="87" y2="85" stroke="#fff" stroke-width="0.5" opacity="0.3"/>
+                </g>
+
+                <!-- 墙上的时钟 -->
+                <g transform="translate(400, 90)">
+                    <!-- 时钟阴影 -->
+                    <circle cx="2" cy="3" r="50" fill="#000" opacity="0.1"/>
+                    <!-- 时钟外框 -->
+                    <circle cx="0" cy="0" r="50" fill="#fff" stroke="#2d3748" stroke-width="4"/>
+                    <circle cx="0" cy="0" r="46" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+                    <!-- 时钟刻度 -->
+                    <g stroke="#2d3748" stroke-width="2">
+                        <line x1="0" y1="-42" x2="0" y2="-36"/>
+                        <line x1="42" y1="0" x2="36" y2="0"/>
+                        <line x1="0" y1="42" x2="0" y2="36"/>
+                        <line x1="-42" y1="0" x2="-36" y2="0"/>
+                    </g>
+                    <g stroke="#4a5568" stroke-width="1">
+                        <line x1="21" y1="-36.4" x2="18" y2="-31.2"/>
+                        <line x1="36.4" y1="-21" x2="31.2" y2="-18"/>
+                        <line x1="36.4" y1="21" x2="31.2" y2="18"/>
+                        <line x1="21" y1="36.4" x2="18" y2="31.2"/>
+                        <line x1="-21" y1="36.4" x2="-18" y2="31.2"/>
+                        <line x1="-36.4" y1="21" x2="-31.2" y2="18"/>
+                        <line x1="-36.4" y1="-21" x2="-31.2" y2="-18"/>
+                        <line x1="-21" y1="-36.4" x2="-18" y2="-31.2"/>
+                    </g>
+                    <!-- 时针 -->
+                    <line x1="0" y1="0" x2="0" y2="-22" stroke="#2d3748" stroke-width="4" stroke-linecap="round"/>
+                    <!-- 分针 -->
+                    <line x1="0" y1="0" x2="28" y2="-5" stroke="#2d3748" stroke-width="3" stroke-linecap="round"/>
+                    <!-- 秒针 -->
+                    <line x1="0" y1="0" x2="-20" y2="15" stroke="#e53e3e" stroke-width="1.5" stroke-linecap="round"/>
+                    <!-- 中心点 -->
+                    <circle cx="0" cy="0" r="4" fill="#2d3748"/>
+                </g>
+
+                <!-- 墙上的画 -->
+                <g transform="translate(520, 130)">
+                    <!-- 画框阴影 -->
+                    <rect x="3" y="4" width="100" height="80" fill="#000" opacity="0.1" rx="3"/>
+                    <!-- 画框 -->
+                    <rect x="0" y="0" width="100" height="80" fill="#fff" stroke="#8b6f4e" stroke-width="4" rx="3"/>
+                    <!-- 画内容 - 风景画 -->
+                    <rect x="8" y="8" width="84" height="64" fill="#87ceeb" rx="2"/>
+                    <!-- 太阳 -->
+                    <circle cx="70" cy="25" r="12" fill="#f6e05e"/>
+                    <!-- 山 -->
+                    <path d="M8,50 L30,25 L50,45 L70,20 L92,50 L92,72 L8,72 Z" fill="#68d391"/>
+                    <path d="M8,55 L25,35 L45,55 L65,30 L92,55 L92,72 L8,72 Z" fill="#48bb78"/>
+                    <!-- 云 -->
+                    <ellipse cx="30" cy="20" rx="12" ry="6" fill="#fff" opacity="0.8"/>
+                    <ellipse cx="40" cy="18" rx="10" ry="5" fill="#fff" opacity="0.8"/>
+                </g>
+
+                <!-- 公告板 -->
+                <g transform="translate(60, 140)">
+                    <!-- 公告板阴影 -->
+                    <rect x="3" y="4" width="120" height="100" fill="#000" opacity="0.1" rx="4"/>
+                    <!-- 公告板 -->
+                    <rect x="0" y="0" width="120" height="100" fill="#fef3c7" stroke="#d69e2e" stroke-width="3" rx="4"/>
+                    <!-- 网格线 -->
+                    <line x1="0" y1="25" x2="120" y2="25" stroke="#d69e2e" stroke-width="0.5" opacity="0.5"/>
+                    <line x1="0" y1="50" x2="120" y2="50" stroke="#d69e2e" stroke-width="0.5" opacity="0.5"/>
+                    <line x1="0" y1="75" x2="120" y2="75" stroke="#d69e2e" stroke-width="0.5" opacity="0.5"/>
+                    <line x1="40" y1="0" x2="40" y2="100" stroke="#d69e2e" stroke-width="0.5" opacity="0.5"/>
+                    <line x1="80" y1="0" x2="80" y2="100" stroke="#d69e2e" stroke-width="0.5" opacity="0.5"/>
+                    
+                    <!-- 便签 -->
+                    <rect x="10" y="10" width="25" height="25" fill="#fc8181" transform="rotate(-5, 22, 22)"/>
+                    <rect x="45" y="8" width="28" height="22" fill="#63b3ed" transform="rotate(3, 59, 19)"/>
+                    <rect x="85" y="12" width="25" height="20" fill="#68d391" transform="rotate(-2, 97, 22)"/>
+                    <rect x="15" y="45" width="22" height="28" fill="#f6ad55" transform="rotate(4, 26, 59)"/>
+                    <rect x="50" y="50" width="25" height="22" fill="#b794f4" transform="rotate(-3, 62, 61)"/>
+                    <rect x="85" y="48" width="28" height="25" fill="#fbb6ce" transform="rotate(2, 99, 60)"/>
+                    
+                    <!-- 图钉 -->
+                    <circle cx="22" cy="15" r="2" fill="#c53030"/>
+                    <circle cx="59" cy="12" r="2" fill="#2c5282"/>
+                    <circle cx="97" cy="16" r="2" fill="#276749"/>
+                    <circle cx="26" cy="50" r="2" fill="#c05621"/>
+                    <circle cx="62" cy="54" r="2" fill="#6b46c1"/>
+                    <circle cx="99" cy="52" r="2" fill="#b83280"/>
+                </g>
+
+                <!-- 装饰元素 - 悬挂的灯 -->
+                <g transform="translate(250, 40)">
+                    <line x1="0" y1="0" x2="0" y2="35" stroke="#4a5568" stroke-width="2"/>
+                    <circle cx="0" cy="35" r="10" fill="#fff" stroke="#4a5568" stroke-width="2"/>
+                    <circle cx="0" cy="35" r="6" fill="#fef3c7" opacity="0.9"/>
+                    <!-- 灯光效果 -->
+                    <circle cx="0" cy="35" r="15" fill="#fef3c7" opacity="0.1"/>
+                </g>
+
+                <!-- 地毯 -->
+                <ellipse cx="400" cy="540" rx="180" ry="35" fill="#805ad5" opacity="0.3"/>
+                <ellipse cx="400" cy="540" rx="160" ry="28" fill="#9f7aea" opacity="0.2"/>
+            </svg>
